@@ -1,17 +1,17 @@
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Concepts from './pages/Concepts'
-import Prices from './pages/Prices'
-import Simulator from './pages/Simulator'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Concepts from "./pages/Concepts";
+import Prices from "./pages/Prices";
+import Simulator from "./pages/Simulator";
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-1 py-8">
+        <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/concepts" element={<Concepts />} />
@@ -21,8 +21,6 @@ function App() {
         </main>
         <Footer />
       </div>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
-
-export default App
